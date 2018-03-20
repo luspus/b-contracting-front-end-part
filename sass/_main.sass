@@ -1,0 +1,1455 @@
+@import "_vars"
+
+*
+	box-sizing: border-box
+
+html
+	font-family: $regular
+	color: $mainTextColor
+	height: 100%
+	position: relative
+
+body
+	font-family: $regular
+	color: $mainTextColor
+	min-height: 100%
+	position: relative
+
+.header
+	width: 100%
+	background: #3085be
+	&__logo
+		display: block
+		float: left
+		width: 30%
+		cursor: pointer
+		img
+			width: 100%
+	&__info
+		padding: 25px 0 15px
+		border-bottom: 1px solid #75aed4
+		position: relative
+		.lang
+			&__body
+				position: absolute
+				top: 5px
+				right: 0
+				z-index: 2
+				cursor: pointer
+				.ua__wrap
+					position: relative
+					&::after
+						@extend .positionAbsolute
+						@extend .langICon
+						background: url('../img/icons/ua.png')
+				.en__wrap
+					position: relative
+					&::after
+						@extend .positionAbsolute
+						@extend .langICon
+						background: url('../img/icons/en.png')
+				.pl__wrap
+					position: relative
+					&::after
+						@extend .positionAbsolute
+						@extend .langICon
+						background: url('../img/icons/pl.png')
+				#active__lang
+					background: rgba(40, 108, 155, 0.92)
+					padding: 5px 40px 5px 11px
+					border-radius: 5px
+					color: #fff
+					input
+						background: none
+						border: 0
+						display: block
+						color: #fff
+				.active__lang
+					&-click
+						border-bottom-left-radius: 0 !important
+						border-bottom-right-radius: 0 !important
+				.content
+					list-style-type: none
+					padding-left: 0
+					background: rgba(40, 108, 155, 0.92)
+					border-bottom-left-radius: 5px
+					border-bottom-right-radius: 5px
+					display: none
+					input
+						position: relative
+						list-style-type: none
+						color: #fff
+						padding: 5px 40px 5px 11px
+						background: none
+						border: 0
+						display: block
+						z-index: 2
+						cursor: pointer
+						&:focus
+							outline: none
+					> div
+						&:hover
+							background: rgba(39, 70, 78, 0.28)
+	&-relative
+		position: relative
+		z-index: 51
+	&__menu
+		margin: 0 auto
+		padding: 10px 0
+		display: -webkit-box
+		display: -moz-box
+		display: -ms-flexbox
+		display: flex
+		-webkit-flex-wrap: wrap
+		-moz-flex-wrap: wrap
+		-ms-flex-wrap: wrap
+		flex-wrap: wrap
+		-webkit-justify-content: center
+		-moz-justify-content: center
+		-ms-justify-content: center
+		justify-content: center
+		.menu
+			&__item
+				list-style-type: none
+				position: relative
+				padding: 0 3px
+				cursor: pointer
+				&-active
+					.menu__link
+						background: $menuLinkBg
+						border-radius: 5px
+				&:hover
+					.menu__link
+						background: rgba(40, 108, 155, 0.43)
+						border-radius: 5px
+			&__link
+				display: block
+				padding: 10px 30px
+				text-transform: uppercase
+				color: white
+				&:hover
+					text-decoration: none		
+	&__contacts
+		margin-top: 15px
+		color: #fff
+		.contacts
+			&__number
+				position: relative
+				left: 75px
+				.phone
+					position: relative
+					&::before
+						@extend .positionAbsolute
+						background: url('../img/icons/phone.png')
+						width: 16px
+						height: 16px
+						background-size: cover
+						left: -23px
+						top: 4px
+				.viber
+					position: relative
+					&::before
+						@extend .positionAbsolute
+						background: url('../img/icons/viber.png')
+						width: 17px
+						height: 17px
+						background-size: cover
+						left: -23px
+						top: 4px
+						opacity: 0.5
+
+			&__adress
+				position: relative
+				left: 50px
+				&::before
+					@extend .positionAbsolute
+					background: url('../img/icons/marker.png')
+					width: 23px
+					height: 33px
+					background-size: cover
+					left: -30px
+					top: 8px
+			&__email
+				position: relative
+				left: 40px
+				top: 15px
+				text-align: right
+				&::before
+					@extend .positionAbsolute
+					background: url('../img/icons/email.png')
+					width: 23px
+					height: 15px
+					background-size: cover
+					left: 0px
+					top: 5px
+	&__slider
+		height: 600px
+		overflow: hidden
+		color: #fff
+		position: relative
+		&::after
+			@extend .positionAbsolute
+			background: rgba(48, 133, 190, 0.49)
+			width: 100%
+			height: 100%
+			top: 0
+		.slider
+			&__desc
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				z-index: 2
+			&__text
+				float: none
+				margin: 25px 0
+				font-size: 20px
+			&__title
+				text-transform: uppercase
+				font-size: 45px
+		.read__more
+			display: inline-block
+			border: 2px solid #fff
+			color: #fff
+			text-transform: uppercase
+			padding: 10px 30px
+			background: rgba(255, 0, 0, 0)
+			font-family: $medium
+			font-size: 16px
+			&:hover
+				text-decoration: none
+				cursor: pointer
+				color: #72b2de
+				border: 2px solid #72b2de
+	&__button
+		display: none
+		position: absolute
+		z-index: 4
+		right: 20px
+		top: 4px
+		height: 40px
+		width: 40px
+		cursor: pointer
+		z-index: 110
+		transition: 0.6s
+		&-active
+			.header__iconmenu
+				span
+					&:nth-child(1)
+						left: 6px
+						top: 12px
+						transform: rotate(45deg)
+					&:nth-child(2)
+						display: none
+					&:nth-child(3)
+						right: 0
+						transform: rotate(-45deg)
+	&__iconmenu
+		span
+			position: relative
+			z-index: 9000
+			display: block
+			width: 70%
+			height: 2px
+			margin-bottom: 5px
+			transition: all 0.1s
+			left: 6px
+			top: 3px
+			margin: 7px 0
+			background: white
+	.menu__scroll
+		padding-bottom: 50px
+
+.slick-slider
+	height: 100%
+.slick-dotted.slick-slider
+	height: 100%
+.slick-slider .slick-track, .slick-slider .slick-list
+	height: 100%
+	
+.section
+	margin: 15px 0
+	&__title
+		padding: 15px 0
+		margin: 20px 0 40px
+		position: relative
+		display: inline-block
+		left: 50%
+		transform: translateX(-50%)
+		&::after
+			@extend .positionAbsolute
+			bottom: 0
+			width: 70%
+			background: $main_color-blue
+			height: 2px
+			left: 50%
+			transform: translateX(-50%)
+		&::before
+			content: "."
+			display: block
+			height: 0
+			clear: both
+			visibility: hidden
+
+.about
+	&__text
+		line-height: 28px
+		div
+			text-indent: 25px
+
+.video
+	.flexslider
+		max-width: 700px
+		margin: 0 auto
+		height: 385px
+		.slides
+			position: relative
+			.video__item
+				list-style-type: none
+				width: 100%
+				height: 100%
+				.video__slide
+					display: block
+					width: 100%
+					height: 100%
+					&::after
+						@extend .positionAbsolute
+						background: rgba(48,133,190,0.49)
+						width: 100%
+						height: 100%
+						top: 0
+						left: 0
+						visibility: visible
+					&::before
+						@extend .positionAbsolute
+						background: url('../img/icons/play.png')
+						width: 70px
+						height: 70px
+						top: 50%
+						visibility: visible
+						z-index: 5
+						background-size: cover
+						transform: translate(-50%, -50%)
+						left: 50%
+					iframe
+						width: 100%
+						height: 100%
+	.flex-direction-nav 
+		.flex-prev
+			left: -125px
+			width: 65px
+			height: 45px
+			&::before
+				@extend .positionAbsolute 
+				background: url('../img/icons/left.png')
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				background-repeat: no-repeat
+		.flex-next
+			right: -125px
+			width: 65px
+			height: 45px
+			&::before
+				@extend .positionAbsolute 
+				background: url('../img/icons/left.png')
+				transform: rotate(-180deg)
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				background-repeat: no-repeat
+	&__slider
+		overflow: hidden
+		
+.reason
+	background: $main_color-blue
+	padding: 20px 0 10px
+	color: #fff
+	position: relative
+	overflow: hidden
+	&::after
+		@extend .positionAbsolute 
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 215px 0 215px 240px
+		border-color: transparent transparent transparent #2b81bc
+		top: 0
+	&::before
+		@extend .positionAbsolute 
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 215px 0 215px 240px
+		border-color: transparent transparent transparent #2b81bc
+		transform: rotate(-180deg)
+		top: 0
+		right: 0
+	&__title
+		font-size: 30px
+		position: relative
+		top: 50%
+		transform: translateY(100%)
+		left: 10%
+		text-transform: uppercase
+		.gradient
+			background: linear-gradient(#fffc10,rgba(255, 252, 16, 0.6),#80d2de,#0089ee)
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+	&__item
+		list-style-type: none
+		padding: 20px 0
+		position : relative
+		padding-left: 50px
+		font-size: 18px
+	&__list
+		float: right
+		.offices
+			&::before
+				@extend .positionAbsolute 
+				background: url('../img/icons/maps.png')
+				width: 70px
+				height: 70px
+				background-size: cover
+				left: -50px
+				top: 15px
+		.employers
+			&::before
+				@extend .positionAbsolute
+				background: url('../img/icons/hand.png')
+				width: 83px
+				height: 40px
+				background-size: cover
+				left: -58px
+				top: 30px
+		.free_vacancy
+			&::before
+				@extend .positionAbsolute
+				background: url('../img/icons/free.png')
+				width: 70px
+				height: 70px
+				background-size: cover
+				left: -50px
+				top: 15px
+		.count
+			&::before
+				@extend .positionAbsolute
+				background: url('../img/icons/vacancy.png')
+				width: 70px
+				height: 75px
+				background-size: cover
+				left: -58px
+				top: 15px
+
+.advantages
+	background-image: linear-gradient(to top, #ffffff 50%, rgba(53, 145, 208, 0.32))
+	&__item
+		position: relative
+		padding-right: 20px
+		list-style-type: none
+		margin: 30px 0
+		min-height: 90px
+		font-size: 17px
+	&__col
+		padding-left: 90px
+		margin-bottom: 0
+	&__vacancy
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/free_ic.png')
+			width: 70px
+			height: 70px
+			background-size: cover
+			left: -95px
+			top: -5px
+	.docs
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/file.png')
+			width: 55px
+			height: 70px
+			background-size: cover
+			left: -90px
+			top: 0px
+	.insurance
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/health-care.png')
+			width: 70px
+			height: 70px
+			background-size: cover
+			left: -95px
+			top: 0px
+	.coordinator
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/call-center.png')
+			width: 70px
+			height: 70px
+			background-size: cover
+			left: -90px
+			top: 2px
+	.students
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/student.png')
+			width: 67px
+			height: 70px
+			background-size: cover
+			left: -83px
+			top: 1px
+	.cash
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/cash.png')
+			width: 70px
+			height: 74px
+			background-size: cover
+			left: -81px
+			top: -2px
+	.cities
+		&:after
+			@extend .positionAbsolute
+			background: url('../img/icons/flats.png')
+			width: 61px
+			height: 70px
+			background-size: cover
+			left: -77px
+			top: 10px
+	.workers
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/crown.png')
+			width: 70px
+			height: 74px
+			background-size: cover
+			left: -81px
+			top: 4px
+			background-position: center
+.map
+	height: 450px
+	width: 100%
+	&-ua
+		background: url('../img/icons/map.png') no-repeat top / cover
+	&-pl
+		background: url('../img/icons/PL.png') no-repeat top / cover
+	&-en
+		background: url('../img/icons/EN.png') no-repeat top / cover
+
+.container
+	&__top
+		background-image: linear-gradient(to bottom, #ffffff 50%, rgba(53, 145, 208, 0.2))
+	&__gradient
+		background-image: linear-gradient(rgba(53, 145, 208, 0.2), #fff, rgba(53, 145, 208, 0.2))
+		padding-bottom: 50px
+
+.footer
+	background: $main_color-blue
+	color: #fff
+	padding: 50px 0 10px
+	position: absolute
+	width: 100%
+	bottom: 0
+	box-sizing: border-box
+	&__row
+		border-bottom: 1px solid #75aed4
+		padding-bottom: 20px
+		> div
+			padding-left: 50px
+			&:first-child
+				padding-left: 0
+		.footer__menuBox
+			padding-left: 0
+	&__bottom
+		padding-top: 20px
+	&__header
+		color: #fff
+		font-family: $medium
+	.company__header
+		color: #fff
+		font-family: $medium
+		text-transform: uppercase
+	.menu__item
+		line-height: 27px
+		.menu__link
+			color: #fff
+			&:hover
+				text-decoration: none
+	.documents__item
+		list-style-type: none
+		padding: 0
+	.footer__menu
+		list-style-type: none
+		padding: 0
+	&__socials
+		text-align: right
+		padding-left: 0
+		.socials__item
+			position: relative
+			display: inline-block
+			width: 30px
+			height: 30px
+			margin: 0 2px 
+			border-radius: 50%
+		.vk
+			a
+				background: url('../img/icons/vk.png')
+				@extend .widthCover
+		.fb
+			a
+				background: url('../img/icons/fb.png')
+				@extend .widthCover
+		.youtube
+			a
+				background: url('../img/icons/youtube.png')
+				@extend .widthCover
+
+/*----gallery----*/
+.gallery
+	&__item
+		padding-right: 50px
+		position: relative
+		list-style-type: none
+		word-break: break-all
+		float: none
+		display: inline-block
+		width: 32.9%
+		vertical-align: top
+		&:nth-child(n+4)
+			margin-top: 20px
+		&:nth-child(3n-1)
+			padding-left: 25px
+			padding-right: 25px
+		&:nth-child(3n+3)
+			padding-left: 50px
+			padding-right: 0
+		.image__wrap
+			position: relative
+			overflow: hidden
+			.gallery__btn
+				position: absolute
+				bottom: 0
+				background: $main_color-blue
+				color: #fff
+				font-family: $medium
+				text-transform: uppercase
+				display: block
+				width: 100%
+				padding: 15px 0
+				text-align: center
+				color: #fff
+				&::after
+					@extend .positionAbsolute
+					background: url(../img/icons/more.png)
+					width: 25px
+					height: 25px
+					background-size: cover
+					right: 55px
+					top: 13px
+					z-index: 10
+				&:hover
+					cursor: pointer
+					color: #fff
+					text-decoration: none
+	&__list
+		padding: 0
+	&__image
+		display: block
+		height: 300px
+		position: relative
+		.image
+			width: 100%
+			height: 100%
+		&:hover
+			transition: 1s
+			-webkit-transform: scale(2, 2)
+			transform: scale(2, 2)
+		&::after
+			@extend .positionAbsolute
+			background: rgba(48,133,190,0.49)
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			visibility: visible
+	.video__image
+		display: block
+		height: 300px
+		&::after
+			@extend .positionAbsolute
+			background: rgba(48,133,190,0.49)
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			visibility: visible
+		&::before
+			@extend .positionAbsolute
+			background: url('../img/icons/play.png')
+			width: 70px
+			height: 70px
+			top: 50%
+			visibility: visible
+			z-index: 5
+			background-size: cover
+			transform: translate(-50%, -50%)
+			left: 50%
+		.iframe
+			width: 100%
+			height: 100%	
+	&__caption
+		padding: 15px 10px
+		font-size: 18px
+		word-break: initial
+
+.project
+	padding-bottom: 15px
+	&__gallery
+		.iframe
+			width: 100%
+			height: 100%
+		.main__photo
+			height: 350px
+			float: none
+			margin: 0 auto
+			display: block
+			position: relative
+			width: 50%
+			div
+				width: 100%
+				height: 100%
+			&::after
+				@extend .gallery_video_opacity
+		&_list
+			padding: 0
+			margin: 50px 0
+			.project__item
+				list-style-type: none
+				height: 180px
+				width: 25%
+				padding-left: 15px
+				margin-bottom: 25px
+				float: left
+				&:nth-child(5n-1)
+					padding-right: 0px
+			img
+				width: 100%
+				height: 100%
+		a
+			display: block
+			width: 100%
+			height: 100%
+			&:focus
+				outline: none
+			> div
+				height: 100%
+				width: 100%
+	&__desc
+		text-indent: 20px
+		clear: both
+		padding-top: 15px
+	&__item_video
+		position: relative
+		display: block
+		&::after
+			@extend .gallery_video_opacity
+
+.mfp-arrow:hover, .mfp-arrow:focus, .mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close, .mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close
+	outline: none !important
+
+
+.pagination
+	margin: 0px auto 20px
+	text-align: center
+	display: block
+	&__list
+		margin-top: 15px
+		padding: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		margin: 0 7px
+		position: relative
+		a
+			background: $main_color-blue
+			color: #fff
+			padding: 6.5px 14px
+			min-width: 25px
+			border-radius: 5px
+			font-family: $medium
+			display: block
+			font-weight: bold
+			cursor: pointer
+			&:hover
+				text-decoration: none
+				background: rgba(53, 145, 208, 0.65)
+			&:focus
+				text-decoration: none
+		&-active
+			a
+				background: #296b98
+	.btn__prev
+		a
+			display: block
+			padding: 19px 25px
+			&::after
+				@extend .positionAbsolute
+				@extend .paginationArrow
+				background: url('../img/icons/prev.png')
+	.btn__next
+		a
+			display: block
+			padding: 19px 25px
+			&::after
+				@extend .positionAbsolute
+				@extend .paginationArrow
+				background: url('../img/icons/prev.png')
+				transform: rotate(-180deg)
+	.last__page
+		a
+			display: block
+			padding: 19px 25px
+			&::after
+				@extend .positionAbsolute
+				@extend .paginationArrow
+				background: url('../img/icons/pagination.png')
+				transform: rotate(-180deg)
+	.first__page
+		a
+			display: block
+			padding: 19px 25px
+			&::after
+				@extend .positionAbsolute
+				@extend .paginationArrow
+				background: url('../img/icons/pagination.png')
+
+/*----vacancy----*/
+.vacancy
+	padding-bottom: 15px
+	&-fixed
+		padding-top: 110px
+	&__container
+		float: none
+		margin: 0 auto
+	&__row
+		margin-bottom: 60px
+		&:last-child
+			margin-bottom: 0px
+	&__list
+		padding: 0
+	&__image
+		height: 350px
+		.vacancy__img
+			width: 100%
+			height: 100%
+	&__desc
+		padding-left: 30px
+	&__item
+		list-style-type: none
+	&__td
+		border-bottom: 1px solid #d2d2d2
+		list-style-type: none
+		padding-top: 5px
+		padding-bottom: 5px
+		position: relative
+		clear: both
+	.status
+		position: relative
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/clock.png')		
+			@extend .vacancyTdIcon
+	.type
+		position: relative
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/file1.png')		
+			@extend .vacancyTdIcon
+	.localization
+		position: relative
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/localization.png')		
+			@extend .vacancyTdIcon
+	.gender
+		position: relative
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/gender.png')		
+			@extend .vacancyTdIcon
+	.age
+		position: relative
+		&:after
+			@extend .positionAbsolute
+			background: url('../img/icons/annual.png')		
+			@extend .vacancyTdIcon
+	.experience
+		position: relative
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/skills.png')		
+			@extend .vacancyTdIcon
+	.salary
+		position: relative
+		&::after
+			@extend .positionAbsolute
+			background: url('../img/icons/dollar-symbol.png')		
+			@extend .vacancyTdIcon
+	&__table
+		padding: 0
+		padding-left: 30px
+		vertical-align: top
+	&__title
+		width: 44%
+		display: inline-block
+		vertical-align: top
+	&__info
+		width: 52%
+		display: inline-block
+	&__header
+		text-transform: uppercase
+		margin: 0 0 15px 0
+	&__button
+		float: right
+		display: block
+		background: $main_color-blue
+		color: #fff
+		text-transform: uppercase
+		border-radius: 5px
+		padding: 10px 15px
+		font-size: 14px
+		font-family: $medium
+		margin-top: 30px
+		&:hover
+			color: #fff
+			text-decoration: none
+			background: rgba(53, 145, 208, 0.65)
+	&__details
+		//padding-bottom: 50px
+		&Title
+			//padding: 15px 0
+			margin: 40px 0 30px
+			position: relative
+			display: inline-block
+			left: 50%
+			transform: translateX(-50%)
+			text-transform: uppercase
+		&Desc
+			p
+				text-indent: 20px
+		&Image
+			height: 260px
+			div
+				height: 100%
+				width: 100%
+		.details__info
+			padding: 0
+			margin-top: 20px
+		.vacancy__container
+			margin: 0
+		.details
+			&__item
+				list-style-type: none
+				line-height: 35px
+			&__title
+				color: $main_color-blue
+				float: left
+				padding-right: 10px
+			&__desc
+				word-break: break-all
+	.desc__col
+		padding-right: 60px
+	.form
+		&__resume
+			.input__row
+				margin-bottom: 10px
+				position: relative
+				padding-bottom: 20px
+				input
+					width: 100%
+					height: 100%
+					padding: 10px 10px 10px 20px
+					border: 0
+					border-radius: 4px
+					border: 1px solid rgba(39, 70, 83, 0.59)
+					&::-webkit-input-placeholder 
+						color: $mainTextColor
+					&:focus
+						outline: none
+			.error__msg 
+				color: #c63c3c
+				position: absolute
+				left: 0
+				bottom: 0
+				word-break: break-all
+			.email
+				margin-bottom: 5px
+		.resume__simple
+			margin: 35px 0
+			a
+				display: block
+				color: $main_color-blue
+				padding: 10px 0
+				font-size: 18px
+				&:hover
+					text-decoration: none
+		.form__title
+			margin-bottom: 30px
+		.file
+			&-upload 
+				position: relative
+				overflow: hidden
+				width: 100%
+				height: 50px
+				background: rgba(162, 162, 162, 0.6)
+				border-radius: 4px
+				padding: 8px 4px
+				color: #fff
+				text-align: center
+				&:hover 
+					background: #75aed4
+				span 
+					line-height: 48px
+					text-transform: uppercase
+					font-family: $medium
+				input[type="file"]
+					display: none
+				label 
+					display: block
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					cursor: pointer
+			&__row
+				position: relative
+				padding-bottom: 20px
+			&__label
+				color: rgba(162, 162, 162, 0.6)
+				font-family: $italic
+			&name
+				background: #eaf3fa
+				border: 0
+				right: 0
+				text-align: right
+				position: absolute
+				font-size: 12px
+				color: #9595a1
+				padding: 0
+		.form__btn
+			width: 100%
+			height: 50px
+			background: $main_color-blue
+			border: 0
+			border-radius: 4px
+			color: #fff
+			line-height: 48px
+			text-transform: uppercase
+			font-family: $medium
+			cursor: pointer
+			margin-top: 20px
+	&__filter
+		&_container
+			padding-top: 30px
+			padding-bottom: 30px
+			text-align: center
+		&_btn
+			background: #fff
+			border: 0
+			color: $mainTextColor
+			border-radius: 4px 
+			padding: 10px 0 10px 15px
+			position: relative
+			text-align: left
+			padding-right: 55px
+			cursor: pointer
+			height: 50px
+			&::after
+				@extend .positionAbsolute
+				background: url(../img/icons/search.png)
+				width: 18px
+				height: 18px
+				right: 20px
+				background-repeat: no-repeat
+				background-size: cover
+				top: 15px
+			&:focus
+				outline: none
+			&:hover
+				background-image: linear-gradient(#fff, rgba(53, 145, 208, 0.49)) 
+
+		&Row
+			background: rgb(45, 126, 181)
+			&-fixed
+				position: fixed
+				width: 100%
+				top: 0
+				z-index: 15
+				-webkit-box-shadow: -1px 7px 14px 3px rgba(121, 122, 121, 0.41)
+				box-shadow: -1px 7px 14px 3px rgba(121, 122, 121, 0.41)
+		.select
+			position: relative
+			cursor: pointer
+			display: inline-block
+			&::after 
+				content: ""
+				font-size: 12px
+				position: absolute
+				background: url(../img/icons/select_cl.png)
+				right: 8px
+				top: 20px
+				z-index: 2
+				text-align: center
+				width: 20px
+				height: 10px
+				pointer-events: none
+				box-sizing: border-box
+				background-repeat: no-repeat
+				background-size: cover
+			.category__select
+				padding: 10px 30px 10px 20px
+				background: #fff
+				border-radius: 4px
+				border: 2px solid #fff
+				position:  relative
+				display: inline-block
+				-webkit-appearance: none
+				-moz-appearance: none
+				appearance: none
+				color: $mainTextColor
+				height: 50px
+				width: 100%
+				&::-ms-expand
+					display: none
+				option
+					background-color: transparent
+					border: 0
+					padding-right: 15px
+					height: 31px
+				&:focus
+					outline: none
+		.salary
+			background: #fff
+			padding: 7px 0
+			border-radius: 4px
+			border: 2px solid #fff
+			padding-left: 20px
+			display: inline-block
+			height: 50px
+			vertical-align: top
+			width: 22%
+			input
+				margin: 0 3px
+				width: 65px
+				padding: 2px 0 2px 5px
+				&:visited
+					border: 1px solid $main_color-blue
+				&::-webkit-input-placeholder
+					color: $mainTextColor
+				&::-moz-placeholder
+					color: $mainTextColor
+				&:-moz-placeholder
+					color: $mainTextColor
+				&:-ms-input-placeholder
+					color: $mainTextColor
+				&:focus
+					outline: none
+		.gender
+			width: 15%
+		.experience
+			width: 15%
+	.filter__result
+		font-size: 18px
+		margin-bottom: 20px
+	.filter__count
+		font-size: 20px
+		font-weight: bold
+		padding-left: 10px
+
+.maps
+	width: calc(33.33% - 30px)
+	float: left
+	margin: 15px
+	&__container
+		padding-bottom: 30px
+	&__wrapper
+		height: 280px
+		background-position: 100% 60%
+		position: relative
+	.contacts
+		&__adress
+			padding: 0
+			li
+				list-style-type: none
+				padding: 8px 0 5px 40px
+				position: relative
+			a
+				color: $mainTextColor
+				&:hover
+					text-decoration: none
+					color: inherit
+				&:focus
+					text-decoration: none
+					color: inherit
+			.contacts__header
+				font-size: 24px
+				padding-left: 0
+				padding-top: 15px
+	.adress
+		&::before
+			@extend .positionAbsolute
+			width: 30px
+			height: 34px
+			background: url('../img/icons/loc.png')
+			background-size: cover
+			left: -2px
+			top: 15px
+	.number
+		&::before
+			@extend .positionAbsolute
+			background: url('../img/icons/phone-receiver.png')
+			width: 25px
+			height: 25px
+			background-size: cover
+			left: 3px
+			top: 5px
+	.viber
+		&::before
+			@extend .positionAbsolute
+			width: 30px
+			height: 30px
+			background: url('../img/icons/viber.png')
+			background-size: cover
+			left: 3px
+			top: 5px
+	.email
+		&::before
+			@extend .positionAbsolute
+			width: 25px
+			height: 25px
+			background: url('../img/icons/close-envelope.png')
+			background-size: cover
+			left: 7px
+			top: 7px
+	.site
+		&::before
+			@extend .positionAbsolute
+			width: 25px
+			height: 25px
+			background: url('../img/icons/internet.png')
+			background-size: cover
+			left: 7px
+			top: 8px
+
+.main
+	&__container
+		&::after 
+			content: "."
+			display: block
+			height: 0
+			clear: both
+			visibility: hidden
+	&__pageLink
+		font-size: 18px
+		cursor: pointer
+		background: #3591d0
+		display: inline-block
+		color: #fff
+		padding: 10px 25px 10px 50px
+		font-family: "robotomedium"
+		text-transform: uppercase
+		&:hover
+			background: #75aed4
+			color: #fff
+			text-decoration: none
+
+.scroll__top
+	width: 60px
+	height: 60px
+	z-index: 5
+	position: fixed
+	right: 5%
+	bottom: 15%
+	cursor: pointer
+	a
+		background: url(../img/icons/top_arrow.jpg)
+		background-size: cover
+		position: absolute
+		width: 100%
+		height: 100%
+		transform: rotate(-90deg)
+		-webkit-border-radius: 50%
+		border-radius: 50%
+		border: 2px solid #fff
+
+.return__btn
+	a
+		color: $mainTextColor
+		font-family: $medium
+		font-size: 18px
+		margin: 20px 0
+		display: block
+		&:hover
+			color: $mainTextColor
+			cursor: pointer
+.success
+	&__msg
+		position: fixed
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		background: #fff
+		padding: 40px 40px
+		border: 6px solid #3085be
+		border-radius: 8px
+		font-size: 18px
+		font-family: robotobold
+		text-transform: uppercase
+		background-color: white
+		z-index: 52
+		display: none
+	&__text
+		border-top: 2px solid #3085be
+		border-bottom: 2px solid #3085be
+		padding: 35px 15px
+		position: relative
+		&::before
+			content: ""
+			position: absolute
+			width: 40px
+			height: 40px
+			background: url(../img/icons/send.png)
+			background-size: cover
+			bottom: -4px
+			right: -23px
+
+.bg__darken
+	position: fixed
+	top: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	background: rgba(0, 0, 0, 0.47)
+	z-index: 50
+
+.no__scroll
+	overflow: hidden
+
+.submenu
+	position: absolute
+	padding: 10px 0 0
+	z-index: 5
+	width: 200px
+	border-radius: 5px
+	margin: 0 auto
+	text-align: center
+	left: 50%
+	transform: translateX(-50%)
+	display: none
+	&__block
+		&:hover
+			> .submenu
+				display: block
+				transition: 0.7s
+	&__item
+		padding: 0
+		list-style-type: none
+		border-bottom: 2px solid rgba(48, 133, 190, 0.28)
+		background: #fff
+		&:last-child
+			border-bottom: none
+	&__link
+		display: block
+		padding: 15px 10px
+		text-transform: uppercase
+		color: $main_color-blue
+		&:hover
+			text-decoration: none
+			color: $mainTextColor
+			background: rgba(48, 133, 190, 0.21)
+
+.support
+	padding-bottom: 30px
+	&__text
+		font-family: $medium
+		line-height: 29px
+		text-indent: 15px
+		overflow: hidden
+	&__phone
+		font-size: 18px
+		margin: 35px 0 0
+		position: relative
+		left: 30px
+		&::before
+			@extend .supportImg
+			background: url(../img/icons/phone-receiver.png)
+	&__email
+		font-size: 18px
+		margin: 35px 0 0
+		position: relative
+		left: 30px
+		&::before
+			@extend .supportImg
+			background: url(../img/icons/close-envelope.png)
+
+.main
+	&__container
+		position: relative
+		&:after 
+			content: "."
+			display: block
+			height: 0
+			clear: both
+			visibility: hidden
+	&__errorBox
+		overflow: hidden
+		position: relative
+		height: 100vh
+		background: url('../img/icons/error.png')
+		background-size: cover
+	&__pageLink
+		&:hover
+			background: #75aed4
+			color: #fff
+			text-decoration: none
+.error
+	&__container
+		position: relative
+		text-align: center
+		transform: translate(-50%, -50%)
+		left: 50%
+		top: 40%
+	&__number
+		font-size: 28vh
+	&__message
+		text-transform: uppercase
+		font-size: 6vh
+		font-family: $light
+		margin-top: -5vh
+	&__btn
+		position: relative
+		display: inline-block
+		margin-top: 15px
+		&:before		
+			@extend .positionAbsolute
+			width: 23px
+			height: 23px
+			background: url('../img/icons/back-arrow.png')
+			background-size: cover
+			top: 11px
+			left: 15px
+			
+.partners
+	&__logo
+		float: left 
+		width: 130px
+		height: 130px
+		margin-right: 15px
+	&__docs
+		margin-top: 45px
+		&_link
+			display: inline-block
+			margin-right: 15px

@@ -1,0 +1,16 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+$grid-gutter-width-base:     0px !default;
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1140px;
+    }
+}
+@media (min-width: 992px) {
+    .container{
+        max-width: 940px;
+    }
+}

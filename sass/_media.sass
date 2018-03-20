@@ -1,0 +1,558 @@
+@import "vars"
+@media(max-width: 1400px)
+	.reason
+		&:after
+			border-width: 215px 0 215px 150px
+		&:before
+			border-width: 215px 0 215px 150px
+
+@media(max-width: 1199px)
+	.vacancy
+		&__image
+			height: 250px
+		&__details
+			&Image
+				width: 40%
+			&Desc
+				width: 59%
+		&__filter
+			.select
+				.category__select
+					padding-left: 10px
+
+	.reason
+		&:after
+			border-width: 215px 0 215px 100px
+		&:before
+			border-width: 215px 0 215px 100px
+
+	.gallery
+		&__item
+			padding-right: 30px
+			&:nth-child(3n-1)
+				padding-left: 15px
+				padding-right: 15px
+			&:nth-child(3n+3)
+				padding-left: 30px
+				padding-right: 0
+			.image__wrap, .video__wrap
+				height: 250px
+
+@media(min-width: 992px) and (max-width: 1199px)
+	.header
+		&__contacts
+			.contacts__email
+				&::before
+					left: 20px
+
+@media(min-width: 768px) and (max-width: 1199px)
+	.vacancy__filter 
+		.select 
+			width: 15%
+			&::after
+				right: 7px
+		.salary
+			width: auto
+		.gender
+			width: 12%
+		&_btn
+			padding-right: 42px
+
+@media(max-width: 991px)
+	.advantages
+		padding-left: 15px
+		padding-right: 15px
+
+	.reason
+		&:after
+			display: none
+		&:before
+			display: none
+		&__title
+			left: 0
+
+	.maps
+		width: calc(50% - 30px)
+		&__wrapper
+			height: 200px
+		.contacts__adress
+			font-size: 14px
+	.video 
+		.flexslider
+			width: 470px
+			height: 350px
+
+	.project__gallery 
+		.main__photo
+			height: 250px
+		&_list 
+			.project__item
+				width: 33.33%
+
+	.scroll__top
+		width: 55px
+		height: 55px
+
+	.header
+		&__contacts
+			float: right
+			.contacts
+				&__email
+					position: relative
+					left: 40px
+					top: 0px
+					text-align: right	
+					width: 53%
+					float: right
+					left: 0
+		&__logo
+			position: relative
+			top: 15px
+			width: 33%
+		&__menu 
+			.menu__link
+				padding: 10px 15px
+				font-size: 15px
+
+	.gallery
+		&__item
+			padding-right: 20px
+			&:nth-child(3n-1)
+				padding-left: 10px
+				padding-right: 10px
+			&:nth-child(3n+3)
+				padding-left: 20px
+				padding-right: 0
+			.image__wrap
+				height: 200px
+			.image__wrap 
+				.gallery__btn
+					&::after
+						right: 25px
+		.video__image::before
+			width: 55px
+			height: 55px
+
+@media(max-width: 767px)
+	.header
+		&__contacts
+			.contacts
+				&__number
+					text-align: right
+					left: 0
+					.phone
+						&::before
+							display: none
+					.viber
+						&::before
+							display: none
+				&__adress
+					text-align: right
+					left: 0
+					&::before
+						display: none
+				&__email
+					top: 0
+					width: 70%
+					&::before
+						display: none
+		&__menu
+			.menu__link
+				padding: 10px 8px
+		&__logo
+			position: absolute
+			top: 41px
+			width: 45%
+
+	.vacancy
+		&__image
+			display: none
+		&__table
+			padding-right: 15px
+		&__button
+			margin-right: 15px
+		&__desc
+			width: 100%
+		&__row 
+			margin-bottom: 60px
+			background: rgba(45, 126, 181, 0.12)
+			padding: 15px 0
+			border: 1px solid #2d7eb5
+		.desc__col
+			padding: 0
+			margin-bottom: 20px
+		&__details
+			&Desc
+				padding-left: 10px
+				padding-right: 10px
+			&Image
+				float: none
+				width: 50%
+				margin: 0 auto 15px
+			.vacancy__row
+				margin-bottom: 25px
+		&__filter
+			&_container
+				padding-bottom: 20px
+				padding-left: 30px
+				padding-right: 30px
+			.select
+				margin-bottom: 10px
+			.salary
+				width: 52%
+				padding-left: 0px
+			.gender, .experience
+				width: 35%
+				
+	.video 
+		.flexslider
+			max-width: 350px
+			height: 300px
+		.flex
+			&-direction-nav 
+				.flex-next
+					right: -75px
+					width: 35px
+					height: 35px
+					&::before
+						background-size: contain
+						background-position: center
+				.flex-prev
+					left: -75px
+					width: 35px
+					height: 35px
+					&::before
+						background-size: contain
+						background-position: center
+	
+	.reason
+		&__list
+			width: 40%
+		&__title
+			font-size: 27px
+			width: 40%
+
+	.project__gallery 
+		.main__photo
+			height: 200px
+		&_list 
+			.project__item
+				width: 50%
+				&:nth-child(even)
+					padding-left: 10px
+					padding-right: 10px
+				&:nth-child(odd)
+					padding-left: 10px
+					padding-right: 10px
+	.footer
+		&__row
+			> div
+				padding-left: 0
+	.gallery
+		&__item
+			width: 49%
+			padding-right: 20px
+			margin-bottom: 15px
+			&:nth-child(even)
+				padding-left: 10px
+				padding-right: 0
+			&:nth-child(odd)
+				padding-left: 0
+				padding-right: 10px
+			&:nth-child(n+4)
+				margin-top: 0
+			.image__wrap, .video__wrap
+				height: 200px
+
+@media(max-width: 574px)
+	.header
+		&__info
+			padding: 25px
+			.lang
+				&__body
+					right: 25px
+		&-fixed
+			position: fixed
+			top: 0
+			width: 100%
+			height: 50px
+			z-index: 500
+			background: #3085be
+		&__logo
+			position: relative
+			height: 150px
+			width: 33%
+			top: 0
+			left: 20px
+			&::after
+				content: ''
+				position: absolute
+				background: url('../img/icons/logo_xs.png') no-repeat 
+				background-size: contain
+				width: 100%
+				height: 100%
+			img
+				display: none
+		&__slider
+			.slider__decs
+				left: 15%
+				transform: none
+		&__menu
+			display: block
+			.menu__link
+				text-align: left
+			.menu__item
+				padding: 0
+				&:hover
+					.menu__link
+						background: none
+						border-radius: none
+			&Row
+				position: relative
+				padding-top: 50px
+		&__button
+			display: block
+		&__menuBody
+			display: none
+		&__mobmenu
+			display: block
+			.header__menu
+				width: 100%
+				text-align: left
+				position: absolute
+				z-index: 15
+				background: rgba(48, 133, 190, 0.52)
+				top: 0
+				padding: 0
+				.menu__item
+					background: rgb(48, 133, 190)
+					border-radius: 0
+					border-bottom: 1px solid rgba(255, 255, 255, 0.44)
+					&-active
+						.menu__link
+							background: rgba(40, 108, 155, 0.39)
+
+		&__slider
+			.slider__desc
+				transform: translateY(-50%)
+				left: 10%
+	.submenu
+		width: 100%
+		padding: 0
+		text-align: left
+		.submenu__item
+			padding-left: 50px
+			background: rgb(120, 175, 212)
+		&__link
+			color: white
+			padding: 10px 10px
+		&__block
+			&:hover > .submenu
+				display: none
+			span
+				position: relative
+				&::after
+					content: "▼"
+					position: absolute
+					color: $mainTextColor
+					top: -2px
+					right: -25px
+		&-active
+			display: block !important
+
+	.support
+		padding: 0 15px 15px
+
+	.video 
+		.flexslider
+			max-width: 250px
+			height: 225px
+
+	.vacancy
+		padding-left: 15px
+		padding-right: 15px
+		&__details
+			&Image
+				height: 150px
+			.vacancy__table
+				font-size: 15px
+			.details__item
+				line-height: 23px
+
+	.map
+		height: 250px
+		background-size: cover
+		background-position: center
+		&s
+			width: calc(100% - 30px)
+			&__wrapper
+				height: 300px
+
+	.advantages
+		&__col
+			margin: 0
+		&__item
+			font-size: 18px
+			margin-bottom: 30px
+		&__vacancy::after
+			top: 0
+		.docs::after
+			top: 10px
+		.insurance::after
+			top: 10px
+		.coordinator::after
+			top: 10px
+		.students::after
+			top: 10px
+		.cash::after
+			top: 10px
+		.workers::after
+			top: 10px
+
+	.reason
+		padding-left: 15px
+		padding-right: 15px
+		&__title
+			float: none
+			transform: inherit
+			width: 100%
+			left: 0
+			top: 0
+			margin: 0 auto
+			text-align: center
+		&__list
+			clear: both
+			width: 100%
+			margin: 0 auto
+			float: none
+			left: 55%
+			transform: translateX(-50%)
+			&::after
+				content: "."
+				display: block
+				height: 0
+				clear: both
+				visibility: hidden
+			.offices::before
+				top: 25px
+		&__item
+			width: 70%
+			left: 55%
+			transform: translateX(-50%)
+
+	.project
+		&__desc
+			margin: 0 15px
+		&__gallery
+			.main__photo
+				width: 70%
+
+	.return__btn
+		margin-left: 15px
+
+	.footer
+		&__bottom
+			.footer__socials
+				text-align: center
+				margin-top: 10px
+		&__row
+			text-align: center
+		.col
+			float: none
+			padding: 5px 0
+		.documents__list
+			margin: 0
+
+	.gallery
+		&__list
+			padding: 0 15px
+
+	.vacancy
+		&__filter
+			&_container
+				padding-left: 0px
+				padding-right: 0px
+
+	.main__pageLink
+		padding: 10px 25px 10px 43px
+		font-size: 16px
+		
+@media(max-width: 480px)
+	.vacancy
+		&__filter
+			.select
+				width: 33.3%
+			.salary
+				width: 63%
+			.gender, .experience
+				width: 48%
+
+	.gallery__item
+		width: 100%
+		&:nth-child(odd)
+			padding: 0
+		&:nth-child(even)
+			padding: 0
+		.image__wrap 
+			.gallery__btn::after
+				display: none
+		.image__wrap, .video__wrap
+			height: 220px
+			.gallery__btn
+				font-size: 15px
+
+@media(max-width: 360px)
+	.header
+		&__logo
+			height: 111px
+			top: 30px
+			left: 0
+	.vacancy 
+		.email 
+			.error__msg
+				bottom: -14px
+		&__filter
+			.salary
+				width: 80%
+				margin-bottom: 10px
+			.select
+				width: 80%
+
+	.video 
+		.flexslider
+			max-width: 200px
+			height: 200px
+			.slides 
+				.video__item 
+					.video__slide
+						&::before
+							width: 50px
+							height: 50px
+		.flex
+			&-direction-nav 
+				.flex-next
+					right: -55px
+					width: 35px
+					height: 35px
+				.flex-prev
+					left: -55px
+					width: 35px
+					height: 35px
+
+	.map
+		height: 200px
+
+	.project__gallery
+		&_list 
+			.project__item
+				height: 150px
+				&:nth-child(even)
+					padding-left: 5px
+					padding-right: 5px
+				&:nth-child(odd)
+					padding-left: 5px
+					padding-right: 5px
+	.partners
+		&__logo
+			width: 80px
+			height: 80px
